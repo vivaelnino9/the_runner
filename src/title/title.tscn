@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/title/title.gd" type="Script" id=1]
+[ext_resource path="res://src/title/fonts/computer_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/title/buttons/start_button.gd" type="Script" id=3]
+
+[node name="title" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="panel/HSplitContainer"]
+margin_right = 1280.0
+margin_bottom = 720.0
+alignment = 1
+
+[node name="title_label" type="Label" parent="panel/HSplitContainer/VBoxContainer"]
+margin_top = 300.0
+margin_right = 1280.0
+margin_bottom = 355.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.235294, 0.227451, 0.266667, 1 )
+text = "RUNNER"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="buttons" type="VBoxContainer" parent="panel/HSplitContainer/VBoxContainer"]
+margin_top = 359.0
+margin_right = 1280.0
+margin_bottom = 420.0
+
+[node name="start_button" type="Button" parent="panel/HSplitContainer/VBoxContainer/buttons"]
+margin_right = 1280.0
+margin_bottom = 61.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 2 )
+text = "Start Game"
+script = ExtResource( 3 )
+scene_to_load = "res://src/game/game.tscn"
