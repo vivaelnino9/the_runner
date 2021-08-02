@@ -5,13 +5,14 @@ func initialize():
 
 func enter():
 	anim_player.play("slide")
+	owner.get_node("sliding_collision").disabled = false
 	
 func update(delta):
-	if not anim_player.is_playing():
-		emit_signal("finished", "running")
-	else:
-		pass
+	pass
+
+func _on_animation_finished(anim_name):
+	emit_signal("finished", "previous")
 
 func exit():
-	pass
+	owner.get_node("sliding_collision").disabled = true
 	

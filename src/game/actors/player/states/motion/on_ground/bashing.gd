@@ -5,6 +5,7 @@ func initialize():
 
 func enter():
 	anim_player.play("bash")
+	owner.get_node("bashing_collision").disabled = false
 	
 func update(delta):
 	if not anim_player.is_playing():
@@ -13,5 +14,5 @@ func update(delta):
 		pass
 
 func exit():
-	pass
+	owner.get_node("bashing_collision").disabled = true
 	

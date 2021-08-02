@@ -1,21 +1,20 @@
 extends "in_air.gd"
 
-func initialize():
-	pass
+func initialize(enter_velocity):
+	VELOCITY = enter_velocity
+	if VELOCITY.y == 0:
+		VELOCITY.y = SPEED
 
 func enter():
-	height = 0.0
-	speed = 600.0
 	anim_player.play("jump")
+	owner.get_node("falling_collision").disabled = false
 
 func update(delta):
-	animate_gravity(delta)
-	if speed <= 0.0 and height > 0.0:
+	owner.move_and_slide(VELOCITY, Vector2.UP, false, 4, 0.9, false)
+	VELOCITY.y += GRAVITY * delta
+	if VELOCITY.y > 0:
 		emit_signal("finished", "falling")
 
 
-#func animate_jump_height(delta):
-#	speed -= GRAVITY * delta
-#	height += speed * delta
-#	height = max(0.0, height)
-#	owner.get_node("AnimatedSprite").position.y = -height
+func exit():
+	owner.get_node("falling_collision").disabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://assets/animations/player/PrototypeHero_noSword.png" type="Texture" id=1]
 [ext_resource path="res://src/game/actors/player/player_state_machine.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/game/actors/player/states/motion/on_ground/sliding.gd" type="Script" id=8]
 [ext_resource path="res://src/game/actors/player/states/motion/on_ground/juking.gd" type="Script" id=9]
 [ext_resource path="res://src/game/actors/player/states/motion/on_ground/bashing.gd" type="Script" id=10]
+[ext_resource path="res://src/game/actors/player/states/motion/staggering.gd" type="Script" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -81,127 +82,142 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 300, 880, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 400, 720, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 500, 720, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 600, 720, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 700, 720, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 800, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 100, 800, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 80, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 100, 80, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 200, 80, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 300, 80, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 400, 80, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 500, 80, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 600, 80, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 700, 80, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 600, 0, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 700, 0, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 160, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=32]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 100, 160, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 200, 160, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 300, 160, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=35]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 400, 160, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=36]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 500, 160, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=37]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 600, 160, 100, 80 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=38]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 700, 160, 100, 80 )
 
-[sub_resource type="SpriteFrames" id=33]
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 600, 320, 100, 80 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 700, 320, 100, 80 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 400, 100, 80 )
+
+[sub_resource type="SpriteFrames" id=42]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
@@ -218,40 +234,44 @@ animations = [ {
 "name": "juke",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "bash",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 29 ), SubResource( 30 ) ],
 "loop": true,
 "name": "run_start",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
 "loop": true,
 "name": "run_stop",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 28 ) ],
+"frames": [ SubResource( 34 ) ],
 "loop": true,
 "name": "jump",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "fall",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "stagger",
+"speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=48]
-resource_name = "bash"
-length = 0.5
+[sub_resource type="Animation" id=43]
+length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -271,13 +291,13 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0880376, 0.175552, 0.26401, 0.348961, 0.437168 ),
+"times": PoolRealArray( 0, 0.133406, 0.274153, 0.40677, 0.539509, 0.676109 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=44]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -304,7 +324,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=45]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -331,9 +351,8 @@ tracks/1/keys = {
 "values": [ 1, 2, 3, 4, 5, 5, 5, 5 ]
 }
 
-[sub_resource type="Animation" id=41]
-resource_name = "juke"
-length = 0.5
+[sub_resource type="Animation" id=46]
+length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -353,13 +372,13 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.129906, 0.275221, 0.425662 ),
+"times": PoolRealArray( 0, 0.213384, 0.444597, 0.674886 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=47]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -386,9 +405,9 @@ tracks/1/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=37]
-length = 0.7
+[sub_resource type="Animation" id=48]
 loop = true
+step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -408,13 +427,13 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=49]
 length = 0.571429
 loop = true
 step = 0.142857
@@ -443,7 +462,7 @@ tracks/1/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=50]
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -471,8 +490,8 @@ tracks/1/keys = {
 "values": [ 1, 2, 2 ]
 }
 
-[sub_resource type="Animation" id=40]
-length = 0.5
+[sub_resource type="Animation" id=51]
+length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -492,10 +511,38 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0555684, 0.416206, 0.462666 ),
+"times": PoolRealArray( 0, 0.0555684, 0.620553, 0.673384 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "stagger"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "stagger" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.337865 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
 }
 
 [node name="player" type="KinematicBody2D"]
@@ -505,6 +552,9 @@ script = ExtResource( 3 )
 [node name="states" type="Node" parent="."]
 script = ExtResource( 2 )
 START_STATE = NodePath("running")
+
+[node name="staggering" type="Node" parent="states"]
+script = ExtResource( 11 )
 
 [node name="idle" type="Node" parent="states"]
 script = ExtResource( 4 )
@@ -529,78 +579,47 @@ script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
-frames = SubResource( 33 )
-animation = "jump"
+frames = SubResource( 42 )
+animation = "stagger"
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
-anims/bash = SubResource( 48 )
-anims/fall = SubResource( 34 )
-anims/idle = SubResource( 35 )
-anims/juke = SubResource( 41 )
-anims/jump = SubResource( 36 )
-anims/run = SubResource( 37 )
-anims/run_start = SubResource( 38 )
-anims/run_stop = SubResource( 39 )
-anims/slide = SubResource( 40 )
+anims/bash = SubResource( 43 )
+anims/fall = SubResource( 44 )
+anims/idle = SubResource( 45 )
+anims/juke = SubResource( 46 )
+anims/jump = SubResource( 47 )
+anims/run = SubResource( 48 )
+anims/run_start = SubResource( 49 )
+anims/run_stop = SubResource( 50 )
+anims/slide = SubResource( 51 )
+anims/stagger = SubResource( 52 )
 
-[node name="Running0Collision" type="CollisionPolygon2D" parent="."]
+[node name="running_collision" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2( 3.65306, 31.2976 )
-scale = Vector2( 1.53061, 1.57993 )
-polygon = PoolVector2Array( 13.2933, -25.2494, 14.5, -14.5, 16.3, -14.5, 19.5, -11.3, 19.5, -3, 17.7, 0.5, 16, 0.5, 7.5, 4.7, 7.5, 1.9, 4.8, 1, 8.2, 13.5, 5, 13.5, -11, 21.5, -16.8, 21.5, -22.5, 29.5, -33.7467, 30.4494, -29.5, 18.7, -29.5, 16.5, -27.3, 16.5, -15.5, 4.7, -15.5, 1.9, -12.5, -3, -16.5, -6.5, -16.5, -12, -13.7, -17.5, -12.2, -17.5, -7.2, -21.5, -1.9, -21.5, -0.299999, -20.4, 1.5, -21.6, 1.5, -24.3 )
-
-[node name="Running1Collision" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 0, 31.4054 )
-scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 12, -20, 12, -12, 16, -12, 20, -8, 16, -4, 12, 0, 8, 0, 6.3, 0.5, 6, 1.6, 8, 12, 12, 16, 16, 20, 12, 20, 8, 24, 4, 20.5, -4, 8, -8, 12, -12, 12, -12, 12, -16.8, 9, -18.5, 9, -20, 8, -23, 7.6, -25.3, 4.1, -24.2, 2, -22.8, 2, -20, 0, -16, 0, -12, 4, -8.3, -2.2, -8, -4, -12, -8, -8, -12, -8, -15, -4, -16, 0, -16, 4, -16, 5, -20.1, 8, -20 )
+polygon = PoolVector2Array( 0, 0, 24, -8, 32, 8, 48, 24, 32, 40, 16, 56, 32, 80, 32, 96, -56, 96, -56, 48, -24, 32, -24, 0 )
 disabled = true
 
-[node name="Running2Collision" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 8, 31.4054 )
-scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 8, -16, 10.5, -12.2, 9.1, -7.5, 12, -4, 12, 0, 6.1, 4.5, 2.5, 4.5, -0.5, 0.5, -0.5, 1.1, 2.2, 13.5, 7.8, 20.2, 6.8, 22.5, 4.7, 22.5, -4.5, 25.2, -4.5, 22, -8, 16, -12, 16, -15.5, 14, -19, 13, -24, 16, -24, 8, -20, 4, -16, 8, -12, 4, -12, 0, -12, -8, -8, -12, 0, -16, 4, -20 )
+[node name="sliding_collision" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 40 )
+polygon = PoolVector2Array( -24, 2, -48, 34, -48, 58, 64, 58, 24, 2 )
 disabled = true
 
-[node name="Running3Collision" type="CollisionPolygon2D" parent="."]
+[node name="jumping_collision" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2( 0, 31.4054 )
-scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 12, -16, 12, -8, 8, -4, 4, 0, 4, 4, 4, 8, 0, 12, -4.7, 15.8, -4, 20, -2.8, 22, -8, 24, -12, 24, -14, 21.5, -12, 16, -16.8, 17.3, -19, 16.2, -19, 14.5, -16, 12, -16, 8, -12, 8, -8, 4, -8, 0, -4, -8, 0, -12, 4, -16 )
+position = Vector2( 0, -13 )
+polygon = PoolVector2Array( 0, 5, -32, 45, -32, 101, -8, 117, 40, 61, 16, -3, 0, -3 )
 disabled = true
 
-[node name="Running4Collision" type="CollisionPolygon2D" parent="."]
+[node name="falling_collision" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2( -8, 31.4054 )
-scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 16, -20, 16, -16, 16, -12, 12, -8, 16, -8, 20, -8, 20, -4, 16, 0, 8, 0, 12, 4, 12, 8, 4, 12, 0, 16, -4, 16, -7.6, 16.2, -11.5, 18.2, -11.5, 19.7, -16, 24, -20, 24, -20, 16, -8, 8, -6.8, -3.3, -8, -8, -4, -12, 0, -16, 4, -16, 8, -16, 8, -20, 12, -20 )
+position = Vector2( 0, -7 )
+polygon = PoolVector2Array( 0, -9, -40, 39, -8, 103, 24, 103, 40, 55, 40, 23, 16, -9 )
 disabled = true
 
-[node name="Running5Collision" type="CollisionPolygon2D" parent="."]
+[node name="bashing_collision" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2( -8, 31.4054 )
-scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 16, -18.8, 16, -10.6, 19, -8.6, 19, -3.8, 12.9, 3.5, 7.9, 3.5, 6.1, 0.700001, 10.4, 12.5, 18, 16.3, 18, 20.3, 12, 24, 8, 16, 4, 12, 0, 4, -4, 8, -8, 12, -12, 8, -16, 4, -20, 4, -20, 0, -16, 0, -12, 0, -8, 0, -4, -4, -8, -8, -4, -12, 0, -16, 4, -16, 8, -12, 8, -20 )
+polygon = PoolVector2Array( -8, 0, -40, 40, -40, 96, 40, 96, 32, 64, 48, 16, 40, -8 )
 disabled = true
 
-[node name="Running6Collision" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 0, 39.4054 )
-scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 12, -20, 12, -16, 8, -12, 8, -8, 8, -4, 4, 0, 4, 4, 4, 12, 8, 16, 12, 16, 8, 20, 4, 20, 0, 12, -4, 8, -16, 8, -21, 9, -20, 4, -21.1, 2.5, -20, 0, -16, 0, -10.5, -1.8, -8, -5.2, -8, -9.5, -8, -12, -6.5, -15.5, 4, -20, 8, -24 )
-disabled = true
-
-[node name="Running7Collision" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 8, 39.4054 )
-scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 8, -20, 8, -16, 8, -12, 12, -12, 12, -8, 8, -4, 4, 0, 0, 0, 0, 8, -4, 8, -8, 12, -8, 16, -8, 20, -12, 20, -16, 16, -12, 8, -20, 12, -20, 4, -16, 4, -12.6, 1, -12, -16, -11.6, -17, -8, -20, -4.3, -20, -2, -19.4, 0, -20, 4, -20 )
-disabled = true
-
-[node name="Running8Collision" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2( 3.65306, 31.2976 )
-scale = Vector2( 1.53061, 1.57993 )
-polygon = PoolVector2Array( 13.2933, -25.2494, 14.5, -14.5, 16.3, -14.5, 19.5, -11.3, 19.5, -3, 17.7, 0.5, 16, 0.5, 7.5, 4.7, 7.5, 1.9, 4.8, 1, 8.2, 13.5, 5, 13.5, -11, 21.5, -16.8, 21.5, -22.5, 29.5, -33.7467, 30.4494, -29.5, 18.7, -29.5, 16.5, -27.3, 16.5, -15.5, 4.7, -15.5, 1.9, -12.5, -3, -16.5, -6.5, -16.5, -12, -13.7, -17.5, -12.2, -17.5, -7.2, -21.5, -1.9, -21.5, -0.299999, -20.4, 1.5, -21.6, 1.5, -24.3 )
-disabled = true
+[connection signal="animation_finished" from="AnimatedSprite/AnimationPlayer" to="states" method="_on_AnimationPlayer_animation_finished"]

@@ -3,6 +3,7 @@ extends "../state_machine.gd"
 func _ready():
 	states_map = {
 		"idle": owner.get_node("states/idle"),
+		"staggering": owner.get_node("states/staggering"),
 		"running": owner.get_node("states/running"),
 		"jumping": owner.get_node("states/jumping"),
 		"falling": owner.get_node("states/falling"),
@@ -17,10 +18,13 @@ func _change_state(state_name):
 	"""
 	if not _active:
 		return
-	if state_name in ["running", "jumping", "sliding", "juking", "bashing"]:
+	if current_state.name == state_name:
+		return
+
+	if state_name != "previous":
 		states_stack.push_front(states_map[state_name])
-	if state_name == "falling" and current_state == states_map["jumping"]:
-		states_map["falling"].initialize(states_map["jumping"].speed, states_map["jumping"].height)
+	if state_name in ["jumping", "falling"]:
+		states_map[state_name].initialize(current_state.VELOCITY)
 	._change_state(state_name)
 
 func _input(event):

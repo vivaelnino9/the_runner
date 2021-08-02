@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/game/game.gd" type="Script" id=1]
 [ext_resource path="res://assets/tilesheets/tilesheet_complete_2X.png" type="Texture" id=2]
 [ext_resource path="res://src/game/actors/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/game/objects/platform.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -32,6 +33,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
+platform = ExtResource( 4 )
 
 [node name="ground" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -40,3 +42,12 @@ tile_data = PoolIntArray( 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 128, 504 )
+
+[node name="platform_timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 640, 360 )
+current = true
+
+[connection signal="timeout" from="platform_timer" to="." method="_on_platform_timer_timeout"]
